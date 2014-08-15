@@ -23,22 +23,34 @@ Microblu OS supports Arduino ethernet or wifi shields (or any other device that 
 * https://www.youtube.com/watch?v=oQzWKPER_ic
 * https://www.youtube.com/watch?v=ZJNlqZXbrbM
 
-##Install 
+##Getting Started with Arduino
+[Visit GitHub!](www.github.com)
+To use microblu you will need to installed the Arduino IDE and some required libraries.
+
+Required Downloads:
+* [Arduino IDE](http://arduino.cc/en/Main/Software)
+* [microblu_mqtt Library](https://github.com/octoblu/microblu_mqtt/archive/master.zip)
+* [PubSubClient Library](https://github.com/jacobrosenthal/pubsubclient/archive/master.zip)
+
+Proceed after you have successfully installed the Arduino IDE 
+
+###Installing Libraries
+
+* Unzip the libraries you've just downloaded and rename the folder for each library removing anything like "- master"
+* Open Arduino and go to Sketch->Import Library->Add Library and choose the main folders you renamed
+* If you goto File->Examples you should see microblu_mqtt 
+* Choose the example that corresponds to the shield you will be using before proceeding.
+
+##Configuring your code
 
 First you need a valid UUID and Token from Skynet. Copy and paste the following into a terminal window, and put the resulting UUID and TOKEN in your sketch.
+
+NOTE: In windows use a terminal emulator such as CYGWIN
 
 ```bash
 curl -X POST -d "type=firmwareController&payloadOnly=true&name=Arduino" http://skynet.im/devices
 ```
-You'll need this repo. 
-* Find the Download Zip button on the right ->
-* Unarchive and rename the resulting folder to remove any invalid characters like -
-* In Arduino go to Sketch->Import Library->Add Library and choose the main folder you renamed
 
-You'll also need our fork of the MQTT PubSubClient Library
-* Go to https://github.com/jacobrosenthal/pubsubclient and find the Download Zip button on the right.
-* Unarchive the folder
-* In Arduino go to Sketch->Import Library->Add Library and choose the *****PubSubClient SUB FOLDER****
 
 ###Install Wifi 
 
