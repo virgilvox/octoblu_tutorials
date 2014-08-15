@@ -51,30 +51,47 @@ NOTE: In windows use a terminal emulator such as CYGWIN
 curl -X POST -d "type=firmwareController&payloadOnly=true&name=Arduino" http://skynet.im/devices
 ```
 
+Ensure the following have been added to your sketch:
+* UUID
+* TOKEN
+* WIFI Credentials (if using wifi shield)
 
-###Install Wifi 
+Save this sketch and move on to the corresponding tutorial!
+
+##Install Wifi 
 
 These are instructions for Arduino brand wifi
 * http://arduino.cc/en/Main/ArduinoWiFiShield
 
-The first thing you should do is see if your shield and network work by using the standard wifi test at
+###Step 1 - Test your WIFI shield
+
+Open the sketch:
 File->Examples->WIFI->WiFiWebClient. 
 
 Put your connection details in and make sure it gets a connection to google that looks like this:
-https://gist.github.com/jacobrosenthal/1dc81eef411392f1de71
+* https://gist.github.com/jacobrosenthal/1dc81eef411392f1de71
 
+###Firmware Update
 If you've never updated your Wifi shields firmware, you'll see a message to update your firmware. Please do:
-http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading
+* http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading
 
-Now you can open microblu_wifi example at File->Examples->microblu_mqtt.
+###Step 2 - check configuration
 
-Add your UUID and TOKEN from before.
+Open microblu_wifi example at File->Examples->microblu_mqtt and follow the Configuring your Code tutorial above if you haven't
+
 
 Last don't forget to change out your wifi or other networking credentials here too. 
 
-Upload away. You can open the Arduino Serial Terminal at 9600  to see your connection status.
+Lastly
+* Check Tools->Port and Tools->Board and make any neccesary changes
+* Upload your code
+* Open a serial monitor and listen in at 9600 baudrate (this is how your Arduino will tell you if something broke)
 
-As we go forward remember NOT to mess with wifi's pins (7, 10, 11, 12, 13 and 4 if using SD card)
+####Pins In use by Shield (Do not use these pins for anything else)
+
+* 7, 10, 11, 12, 13 
+* If the SD card is in use Pin 4 will also be unavailable.
+
 
 ###Install Ethernet 
 
