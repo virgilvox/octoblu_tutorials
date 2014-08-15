@@ -71,16 +71,16 @@ File->Examples->WIFI->WiFiWebClient.
 Put your connection details in and make sure it gets a connection to google that looks like this:
 * https://gist.github.com/jacobrosenthal/1dc81eef411392f1de71
 
-###Firmware Update
+####Firmware Update
 If you've never updated your Wifi shields firmware, you'll see a message to update your firmware. Please do:
 * http://arduino.cc/en/Hacking/WiFiShieldFirmwareUpgrading
 
 ###Step 2 - check configuration
 
-Open microblu_wifi example at File->Examples->microblu_mqtt and follow the Configuring your Code tutorial above if you haven't
+Open microblu_wifi example at File->Examples->microblu_mqtt and follow the "Configuring your Code" tutorial above if you haven't
 
 
-Last don't forget to change out your wifi or other networking credentials here too. 
+Double check your wifi credentials!
 
 Lastly
 * Check Tools->Port and Tools->Board and make any neccesary changes
@@ -93,30 +93,39 @@ Lastly
 * If the SD card is in use Pin 4 will also be unavailable.
 
 
-###Install Ethernet 
+##Install Ethernet 
 
 These are instructions for Arduino brand ethernet shields and boards
 * http://arduino.cc/en/Main/ArduinoEthernetShield
 * http://arduino.cc/en/Main/ArduinoBoardEthernet
 
-Open microblu_eth example at File->Examples->microblu_mqtt.
+Open microblu_eth example at File->Examples->microblu_mqtt and follow the "Configuring your Code" tutorial above if you haven't
 
-Add your UUID and TOKEN from before.
 
 It might be wise to alter the stock MAC address. If you ever have two of these on the same network you'll have trouble otherwise.
 
-Upload away. You can open the Arduino Serial Terminal at 9600 to see your connection status.
+Lastly
+* Check Tools->Port and Tools->Board and make any neccesary changes
+* Upload your code
+* Open a serial monitor and listen in at 9600 baudrate (this is how your Arduino will tell you if something broke)
 
-As we go forward, remember NOT to mess with ethernet's unavailable pins (10, 11, 12, 13 and 4 if using SD card)
+####Pins In use by Shield (Do not use these pins for anything else)
 
-###Install CC3000 
+* 10, 11, 12, 13
+* If the SD card is in use Pin 4 will also be unavailable.
+
+##Install CC3000 
 
 These are instructions for any board using a CC3000 chip regardless of manufacturer. We prefer Sparkfun:
 * https://www.sparkfun.com/products/12071
 * http://www.adafruit.com/products/1491
 
-The only library we know of that properly implements the Arduino client library is Sparkfun's so matter which shield you have, donwnload and install their library as before:
-https://github.com/sparkfun/SFE_CC3000_Library/
+
+####Install Dependency 
+The only library we know of that properly implements the Arduino network client library for the CC3000 is Sparkfun's and as long as you have any shield that uses as CC3000, donwnload and install their library as before:
+* [SFE_CC3000 Library](https://github.com/sparkfun/SFE_CC3000_Library/archive/master.zip)
+
+###Test Connection
 
 The first thing you should do is see if your shield and network work by using the standard wifi test at
 File->Examples->SFE_CC3000_Library->PingTest. 
@@ -128,18 +137,22 @@ Put your connection details. You'll also have to change the pins to match whatev
 #define CC3000_CS       10  // Preferred is pin 10 on Uno
 ```
 
-And make sure it gets a connection to sparkfun that looks like this:
-XXX
+Open a serial monitor to 9600 Baudrate and check that you're connected (this may take a minute)
 
 It it does, we're all good. Open microblu_cc3000 example at File->Examples->microblu_mqtt.
 
-Add your UUID and TOKEN from before.
+Follow the "Configuring your Code" section above.
 
 Don't forget to change out your pins and wifi or other networking credentials here too. 
 
-Upload away. You can open the Arduino Serial Terminal at 9600  to see your connection status.
+Lastly
+* Check Tools->Port and Tools->Board and make any neccesary changes
+* Upload your code
+* Open a serial monitor and listen in at 9600 baudrate (this is how your Arduino will tell you if something broke)
 
-As we go forward, remember NOT not to mess with cc3000's unavailable pins (11, 12, 13 and whatever you set above)
+####Pins In use by Shield (Do not use these pins for anything else)
+
+* 11, 12, 13 and any other pins you've set above.
 
 One note about the cc3000 is it is a VERY big library. We've had to make a few changes. The sketch no longer supports capabilty query. Most likely that doesn't mean anything to you so don't worry about it.
 
