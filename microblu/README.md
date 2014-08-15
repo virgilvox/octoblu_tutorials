@@ -77,7 +77,7 @@ If you've never updated your Wifi shields firmware, you'll see a message to upda
 
 ###Step 2 - check configuration
 
-Open microblu_wifi example at File->Examples->microblu_mqtt and follow the "Configuring your Code" tutorial above if you haven't
+Open microblu_wifi example at File->Examples->microblu_mqtt and **follow the "Configuring your Code" section above** if you haven't
 
 
 Double check your wifi credentials!
@@ -99,7 +99,7 @@ These are instructions for Arduino brand ethernet shields and boards
 * http://arduino.cc/en/Main/ArduinoEthernetShield
 * http://arduino.cc/en/Main/ArduinoBoardEthernet
 
-Open microblu_eth example at File->Examples->microblu_mqtt and follow the "Configuring your Code" tutorial above if you haven't
+Open microblu_eth example at File->Examples->microblu_mqtt and **follow the "Configuring your Code" section above** if you haven't
 
 
 It might be wise to alter the stock MAC address. If you ever have two of these on the same network you'll have trouble otherwise.
@@ -122,7 +122,7 @@ These are instructions for any board using a CC3000 chip regardless of manufactu
 
 
 ####Install Dependency 
-The only library we know of that properly implements the Arduino network client library for the CC3000 is Sparkfun's and as long as you have any shield that uses as CC3000, donwnload and install their library as before:
+The only library we know of that properly implements the Arduino network client library for the CC3000 is Sparkfun's and as long as you have any shield that uses a CC3000, donwnload and install their library as before:
 * [SFE_CC3000 Library](https://github.com/sparkfun/SFE_CC3000_Library/archive/master.zip)
 
 ###Test Connection
@@ -130,7 +130,7 @@ The only library we know of that properly implements the Arduino network client 
 The first thing you should do is see if your shield and network work by using the standard wifi test at
 File->Examples->SFE_CC3000_Library->PingTest. 
 
-Put your connection details. You'll also have to change the pins to match whatever shield you have. The default pin setup is for sparkfun. If you hava adafruit you might use:
+Put your connection details. You'll also have to change the pins to match whatever shield you have. The default pin setup is for sparkfun. If you have adafruit you might use:
 ```
 #define CC3000_INT      3   // Needs to be an interrupt pin (D2/D3)
 #define CC3000_EN       5   // Can be any digital pin
@@ -139,9 +139,9 @@ Put your connection details. You'll also have to change the pins to match whatev
 
 Open a serial monitor to 9600 Baudrate and check that you're connected (this may take a minute)
 
-It it does, we're all good. Open microblu_cc3000 example at File->Examples->microblu_mqtt.
+If it connects, we're all good. Open microblu_cc3000 example at File->Examples->microblu_mqtt.
 
-Follow the "Configuring your Code" section above.
+**Follow the "Configuring your Code" section above. **
 
 Don't forget to change out your pins and wifi or other networking credentials here too. 
 
