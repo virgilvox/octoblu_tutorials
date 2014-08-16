@@ -25,7 +25,7 @@ Microblu OS supports Arduino ethernet or wifi shields (or any other device that 
 
 ##Getting Started with Arduino
 
-To use microblu you will need to installed the Arduino IDE and some required libraries.
+To use microblu you will need to install the Arduino IDE and some required libraries.
 
 Required Downloads:
 * [Arduino IDE](http://arduino.cc/en/Main/Software)
@@ -50,6 +50,8 @@ NOTE: In windows use a terminal emulator such as CYGWIN
 ```bash
 curl -X POST -d "type=firmwareController&payloadOnly=true&name=Arduino" http://skynet.im/devices
 ```
+
+Alternatively you can use this tool to obtain a UUID/TOKEN http://fracture.cc/microblu/
 
 Ensure the following have been added to your sketch:
 * UUID
