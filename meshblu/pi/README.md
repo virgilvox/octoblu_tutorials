@@ -50,4 +50,6 @@ In OctoBlu, add a new Meshblu Private cloud channel. This will give you a UUID a
 
 ##bindPhysical
 
+https://github.com/octoblu/serial/tree/master/examples/firmata/bindPhysical
+
 ##Alljoyn
