@@ -27,7 +27,7 @@ sudo dpkg -i node_latest_armhf.deb
 node -v
 ```
 
-#Install Meshblu dependancies
+##Install Meshblu dependancies
 
 ```
 cd /meshblu
