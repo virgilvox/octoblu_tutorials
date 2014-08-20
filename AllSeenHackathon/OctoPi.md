@@ -1,3 +1,6 @@
+
+![Alt text](http://www.octoblu.com/wp-content/uploads/2014/06/octoblu-300x76.png)
+
 #Octo-Pi Setup
 
 ##Burn Image to SD Card
