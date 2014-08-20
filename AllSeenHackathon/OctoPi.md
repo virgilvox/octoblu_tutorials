@@ -55,3 +55,28 @@ we can obtain this ip address in order to SSH in.
 ```
 some code
 ```
+
+##Using NodeBlu to control a remote Arduino connected to OctoPi
+
+
+
+###Your Arduino Device Credentials
+You can goto /serial/examples/firmata/bindPhysical and add a new UUID/TOKEN but by default they are:
+```
+UUID
+05fc6570-27f7-11e4-b242-8ff2c8c79338
+
+Token
+00sovuic32gr2j4iydzspejkwxldte29
+```
+
+1. Install and Open [NodeBlu](https://chrome.google.com/webstore/detail/nodeblu/aanmmiaepnlibdlobmbhmfemjioahilm?hl=en-US)
+2. Drag in a new Arduino node.
+3. Double click the Arduino node and select Remote Device
+4. Add a new skynet_firmware device and enter your private cloud UUID backslash your Arduino device UUID.
+```
+YOUR_PRIVATE_CLOUD_UUID/05fc6570-27f7-11e4-b242-8ff2c8c79338
+
+```
+
+
