@@ -44,7 +44,7 @@ After having burned the OctoPi image to your SD card:
 3. Plug an Arduino compatible board with the StandardFirmata sketch loaded to the Pi.
 4. Power on the Pi (plug in the 5V usb adapter).
 
-OctoPi should automatically boot up, run the Meshblu Server, a bindPhysical script, connect to the wireless network 
+OctoPi should automatically boot up, run the Meshblu Server, a [bindPhysical](https://github.com/octoblu/serial/tree/master/examples/firmata/bindPhysical) script, connect to the wireless network 
 and then register to the Meshblu Parent cloud.
 
 ##Figuring out your IP Headless
