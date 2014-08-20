@@ -56,8 +56,16 @@ we can obtain this ip address in order to SSH in.
 some code
 ```
 
-##Using NodeBlu to control a remote Arduino connected to OctoPi
+##Alljoyn
 
+The OctoPi image comes pre-loaded with the Alljoyn node.js module. Its locally installed in your Pi's home directory.
+
+/home/pi/alljoyn
+
+For detailed documentation goto the [Alljoyn npm Github repo](https://github.com/octoblu/alljoyn).
+
+
+##Using NodeBlu to control a remote Arduino connected to OctoPi
 
 
 ###Your Arduino Device Credentials
