@@ -58,9 +58,13 @@ some code
 
 ##Alljoyn
 
+![Alt text](http://smartzona.es/content/uploads/2013/12/alljoyn-logo.jpg)
+![Alt text](http://media.marketwire.com/attachments/201402/220921_allseen-alliance-logo.jpg)
+
 The OctoPi image comes pre-loaded with the Alljoyn node.js module. Its locally installed in your Pi's home directory.
 
 /home/pi/alljoyn
+
 
 For detailed documentation goto the [Alljoyn npm Github repo](https://github.com/octoblu/alljoyn).
 
