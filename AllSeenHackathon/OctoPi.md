@@ -108,7 +108,7 @@ return msg;
 
 6. Click Inject!
 
-##Using NodeBlu to control a remote Arduino connected to OctoPi
+##Using NodeBlu to control a remote Arduino connected to OctoPi Meshblu Private cloud
 
 
 ###Your Arduino Device Credentials
@@ -122,9 +122,29 @@ Token
 ```
 
 1. Install and Open [NodeBlu](https://chrome.google.com/webstore/detail/nodeblu/aanmmiaepnlibdlobmbhmfemjioahilm?hl=en-US)
-2. 
-3. Drag in a new Arduino node.
-3. Double click the Arduino node and select Remote Device
+2. Goto Tools->Extensions and enable Developer Mode
+3. Enter "chrome://flags" into your address bar.
+4. Enable debugging for packed apps.
+5. Goto your open Nodeblu app.
+6. Right click anywhere and click "Inspect Background Page"
+7. In the command line at the bottom of the window type replacing IP:
+
+```
+setupConn('http://YOUR-PRIVATE-CLOUD-IP', 80, function(data){ console.log('hi', data); } );
+
+```
+
+8. Drag in a new Arduino node.
+9. Double click the Arduino node and select Remote Device
+10. Select at new device from the skynet_device drop down menu.
+11. Enter in your arduino UUID.
+12. Change Pin to 13 and hit save.
+13. Drag in an Inject node.
+14. Double click the inject node and set payload type to string.
+15. Enter in either a 1 or 0. 
+16. Now hit save.
+17. Make a wire connection (drag the dot from the right end of the inject node) to the Arduino node.
+18. Hit Deploy!
 
 
 After you hit deploy you will be able to send payloads to this node to control Digital/Analog pins and Servos!
