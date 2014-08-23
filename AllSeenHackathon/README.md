@@ -150,3 +150,45 @@ setupConn('http://YOUR-PRIVATE-CLOUD-IP', 80, function(data){ console.log('hi', 
 
 
 After you hit deploy you will be able to send payloads to this node to control Digital/Analog pins and Servos!
+
+
+#Interfacing to Rally Fighter
+
+###Rally Fighter Private cloud UUID
+```
+c43462d1-1cea-11e4-861d-89322229e557
+```
+
+###Rally Fighter Johnny-five script UUID
+```
+3c701ab0-2a69-11e4-ba29-b7d9779a4387
+```
+
+###To control the rally fighter from the main Meshblu cloud (from anywhere in the world) using NodeBlu
+```
+c43462d1-1cea-11e4-861d-89322229e557/3c701ab0-2a69-11e4-ba29-b7d9779a4387
+```
+Here are the respective payloads for each control:
+
+Wipers on = { m : "wipe" } 
+Wipers off { m : "stopwipe" } 
+Hazards On = { m : "hazardon" } 
+Hazards Off = { m : "hazardoff"} 
+Lock = { m : "lock"} 
+Unlock = { m : "unlock"}
+Left Headlight On = {m : "headlighton"}
+Left Headlight Off = {m : "headlightoff"}
+
+In a function node you could put
+```
+if(msg.payload){
+
+msg.payload = { m: 'wipe'};
+
+return msg;
+}
+```
+
+If any payload is passed to afunction node like the one above it will pass a payload of { m : "wipe"} to its outlet.
+Wire it up a skynet out node to the UUID c43462d1-1cea-11e4-861d-89322229e557/3c701ab0-2a69-11e4-ba29-b7d9779a4387 and it will pass it to the rally fighter. 
+
