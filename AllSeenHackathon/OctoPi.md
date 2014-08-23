@@ -69,6 +69,8 @@ There some sample scripts included.
 
 For detailed documentation goto the [Alljoyn npm Github repo](https://github.com/octoblu/alljoyn).
 
+IMPORTANT: Before doing the following you'll need to set up Gateblu on your laptop https://github.com/octoblu/gateblu 
+
 1. Run npm install skynet-alljoyn on the gateway
 2. Connect your web browser the car's meshblu instance:
 
