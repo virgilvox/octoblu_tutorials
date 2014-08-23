@@ -7,8 +7,6 @@
 
 For this part you will need an 8gb SD card.
 
-Downloads:
-- image link
 
 Follow [these instructions](http://lifehacker.com/how-to-clone-your-raspberry-pi-sd-card-for-super-easy-r-1261113524) to burn the image.
 
@@ -46,6 +44,13 @@ After having burned the OctoPi image to your SD card:
 
 OctoPi should automatically boot up, run the Meshblu Server, a [bindPhysical](https://github.com/octoblu/serial/tree/master/examples/firmata/bindPhysical) script or in the case of the rally fighter it will be a script in /nodescripts/RallyFighter called win.js, connect to the wireless network 
 and then register to the Meshblu Parent cloud.
+
+Here are the list of import files and directories:
+
+/meshblu - this is your private cloud folder
+/nodescripts - This has some nifty scripts and things built for the Rally Fighter Specifically
+/serial/examples/firmata/bindPhysical - a way to interface to an Arduino
+/home/pi/alljoyn - This is where alljoyn is located! There is a tutorial below. This is the alljoyn NPM module, lots of info there.
 
 ##Figuring out your IP Headless
 
