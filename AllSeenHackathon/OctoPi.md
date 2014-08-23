@@ -96,7 +96,7 @@ conn.gatewayConfig({
 
 4. Open Nodeblu and configure the following flow: Inject > Javascript > SkyNet gateway
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![cursor_and_nodeblu](https://cloud.githubusercontent.com/assets/1184415/4019977/463abd7a-2a9b-11e4-9ed4-00ca95af2663.png)
 
 5. Add this logic to the javascript function:
 
@@ -122,12 +122,9 @@ Token
 ```
 
 1. Install and Open [NodeBlu](https://chrome.google.com/webstore/detail/nodeblu/aanmmiaepnlibdlobmbhmfemjioahilm?hl=en-US)
-2. Drag in a new Arduino node.
+2. 
+3. Drag in a new Arduino node.
 3. Double click the Arduino node and select Remote Device
-4. Add a new skynet_firmware device and enter your private cloud UUID backslash your Arduino device UUID.
-```
-YOUR_PRIVATE_CLOUD_UUID/05fc6570-27f7-11e4-b242-8ff2c8c79338
 
-```
 
 After you hit deploy you will be able to send payloads to this node to control Digital/Analog pins and Servos!
