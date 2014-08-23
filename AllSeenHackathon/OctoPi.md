@@ -18,7 +18,7 @@ Follow [these instructions](http://lifehacker.com/how-to-clone-your-raspberry-pi
 Run this command to register a new private cloud. Keep a record of your UUID/TOKEN.
 
 ```
-some code
+curl -X POST -d "type=cloud" http://meshblu.octoblu.com/devices
 
 ```
 
@@ -53,7 +53,7 @@ If all went well your Private Meshblu cloud would have reported its IP address t
 we can obtain this ip address in order to SSH in.
 
 ```
-some code
+curl -X GET http://meshblu.octoblu.com/devices/{meshblu uuid} --header "skynet_auth_uuid: {meshblu uuid}" --header "skynet_auth_token: {meshblu token}"
 ```
 
 ##Alljoyn
