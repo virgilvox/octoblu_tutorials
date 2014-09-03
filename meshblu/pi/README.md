@@ -58,6 +58,8 @@ we can obtain this ip address in order to SSH in.
 curl -X GET http://meshblu.octoblu.com/devices/{gateblu uuid} --header "skynet_auth_uuid: {gateblu uuid}" --header "skynet_auth_token: {gateblu token}"
 ```
 
-
-
+##Other Tutorials
+[Using Alljoyn](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/alljoyn.md)
+[Controlling the Rally Fighter](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/rally_fighter.md)
+[Remote Arduino](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/remote_arduino.md)
 
