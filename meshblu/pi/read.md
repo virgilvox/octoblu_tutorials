@@ -8,15 +8,15 @@
 For this part you will need an 8gb SD card.
 
 
-Follow [these instructions](http://lifehacker.com/how-to-clone-your-raspberry-pi-sd-card-for-super-easy-r-1261113524) to burn the image.
+Follow [these instructions](http://www.raspberrypi.org/documentation/installation/installing-images/) to burn the image to an SD card.
 
 
-##Register Private Cloud UUID
+##Register Gateway ( Gateblu ) device.
 
-Run this command to register a new private cloud. Keep a record of your UUID/TOKEN.
+Run this command to register a new gateway. Keep a record of your UUID/TOKEN.
 
 ```
-curl -X POST -d "type=cloud" http://meshblu.octoblu.com/devices
+curl -X POST -d "type=gateway" http://meshblu.octoblu.com/devices
 
 ```
 
@@ -26,10 +26,10 @@ After having burned the OctoPi image to your SD card:
 
 1. Open the root directory of the SD card in a file explorer.
 2. Open the file wifi.conf with a text editor.
-3. Enter in your wifi credentials. 
+3. Enter in your wifi configuration details. (This acts like a standard wpa_supplicant.conf file)
 4. Save and close the file.
 
-##Configure Private Cloud
+##Configure Gateblu (Gateway)
 
 1. In the root folder of the SD card open a file named meshconf.sh inside a text editor.
 2. Change the UUID/TOKEN to match the one you saved earlier.
@@ -39,26 +39,23 @@ After having burned the OctoPi image to your SD card:
 
 1. Put the SD card in your rasperry pi.
 2. Place a raspian compatible USB wifi adapter in one of the USB ports
-3. Plug an Arduino compatible board with the StandardFirmata sketch loaded to the Pi.
-4. Power on the Pi (plug in the 5V usb adapter).
+3. Power on the Pi (plug in the 5V usb adapter).
 
-OctoPi should automatically boot up, run the Meshblu Server, a [bindPhysical](https://github.com/octoblu/serial/tree/master/examples/firmata/bindPhysical) script or in the case of the rally fighter it will be a script in /nodescripts/RallyFighter called win.js, connect to the wireless network 
-and then register to the Meshblu Parent cloud.
+OctoPi should automatically boot up, run the Gateblu server.
 
 Here are the list of import files and directories:
 
-/meshblu - this is your private cloud folder
-/nodescripts - This has some nifty scripts and things built for the Rally Fighter Specifically
-/serial/examples/firmata/bindPhysical - a way to interface to an Arduino
-/home/pi/alljoyn - This is where alljoyn is located! There is a tutorial below. This is the alljoyn NPM module, lots of info there.
+/home/pi/gateblu : This is where your Gateblu server lives.
+/home/pi/hardware_examples : This directory has example scripts for interfacing your Pi's GPIO to Meshblu and Alljoyn.
+
 
 ##Figuring out your IP Headless
 
-If all went well your Private Meshblu cloud would have reported its IP address to the Parent Cloud. With a simple rest call
+If all went well your Gateblu device would have reported its IP address to the Parent Cloud. With a simple rest call
 we can obtain this ip address in order to SSH in.
 
 ```
-curl -X GET http://meshblu.octoblu.com/devices/{meshblu uuid} --header "skynet_auth_uuid: {meshblu uuid}" --header "skynet_auth_token: {meshblu token}"
+curl -X GET http://meshblu.octoblu.com/devices/{gateblu uuid} --header "skynet_auth_uuid: {gateblu uuid}" --header "skynet_auth_token: {gateblu token}"
 ```
 
 ##Alljoyn
@@ -68,20 +65,16 @@ curl -X GET http://meshblu.octoblu.com/devices/{meshblu uuid} --header "skynet_a
 
 The OctoPi image comes pre-loaded with the Alljoyn node.js module. Its locally installed in your Pi's home directory.
 
-/home/pi/alljoyn
+/home/pi/hardware_examples/node_modules/alljoyn
 
 There some sample scripts included.
 
 For detailed documentation goto the [Alljoyn npm Github repo](https://github.com/octoblu/alljoyn).
 
-IMPORTANT: Before doing the following you'll need to set up Gateblu on your laptop https://github.com/octoblu/gateblu 
 
-1. Run npm install skynet-alljoyn on the gateway
-2. Connect your web browser the car's meshblu instance:
+1. Goto the [meshblu jsconsole](http://meshblu.octoblu.com/jsconsole)
 
-{ip address}/jsconsole
-
-3. Run this from the browser console to add the alljoyn subdevice:
+2. Run this from the browser console to add the alljoyn subdevice:
 
 ```
 conn.gatewayConfig({
@@ -101,11 +94,11 @@ conn.gatewayConfig({
 
 ```
 
-4. Open Nodeblu and configure the following flow: Inject > Javascript > SkyNet gateway
+3. Open Nodeblu and configure the following flow: Inject > Javascript > SkyNet Out (in this node add the UUID/TOKEN of your gateway)
 
 ![cursor_and_nodeblu](https://cloud.githubusercontent.com/assets/1184415/4019977/463abd7a-2a9b-11e4-9ed4-00ca95af2663.png)
 
-5. Add this logic to the javascript function:
+4. Add this logic to the javascript function node:
 
 ```
 msg.subdevice="alljoyn";
@@ -129,29 +122,17 @@ Token
 ```
 
 1. Install and Open [NodeBlu](https://chrome.google.com/webstore/detail/nodeblu/aanmmiaepnlibdlobmbhmfemjioahilm?hl=en-US)
-2. Goto Tools->Extensions and enable Developer Mode
-3. Enter "chrome://flags" into your address bar.
-4. Enable debugging for packed apps.
-5. Goto your open Nodeblu app.
-6. Right click anywhere and click "Inspect Background Page"
-7. In the command line at the bottom of the window type replacing IP:
-
-```
-setupConn('http://YOUR-PRIVATE-CLOUD-IP', 80, function(data){ console.log('hi', data); } );
-
-```
-
-8. Drag in a new Arduino node.
-9. Double click the Arduino node and select Remote Device
-10. Select at new device from the skynet_device drop down menu.
-11. Enter in your arduino UUID.
-12. Change Pin to 13 and hit save.
-13. Drag in an Inject node.
-14. Double click the inject node and set payload type to string.
-15. Enter in either a 1 or 0. 
-16. Now hit save.
-17. Make a wire connection (drag the dot from the right end of the inject node) to the Arduino node.
-18. Hit Deploy!
+2. Drag in a new Arduino node.
+3. Double click the Arduino node and select Remote Device
+4. Select at new device from the skynet_device drop down menu.
+5. Enter in your arduino UUID.
+6. Change Pin to 13 and hit save.
+7. Drag in an Inject node.
+8. Double click the inject node and set payload type to string.
+9. Enter in either a 1 or 0. 
+10. Now hit save.
+11. Make a wire connection (drag the dot from the right end of the inject node) to the Arduino node.
+12. Hit Deploy!
 
 
 After you hit deploy you will be able to send payloads to this node to control Digital/Analog pins and Servos!
