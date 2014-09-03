@@ -59,7 +59,7 @@ curl -X GET http://meshblu.octoblu.com/devices/{gateblu uuid} --header "skynet_a
 ```
 
 ##Other Tutorials
-[Using Alljoyn](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/alljoyn.md)
-[Controlling the Rally Fighter](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/rally_fighter.md)
-[Remote Arduino](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/remote_arduino.md)
+- [Using Alljoyn](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/alljoyn.md)
+- [Controlling the Rally Fighter](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/rally_fighter.md)
+- [Remote Arduino](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/remote_arduino.md)
 
