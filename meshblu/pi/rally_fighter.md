@@ -2,8 +2,8 @@
 #Interfacing to Rally Fighter
 
 Examples:
-www.fracture.cc/rally
-www.fracture.cc/rally/rally.zip
+- www.fracture.cc/rally
+- www.fracture.cc/rally/rally.zip
 
 ###To control the rally fighter from the main Meshblu cloud (from anywhere in the world) using NodeBlu
 ```
