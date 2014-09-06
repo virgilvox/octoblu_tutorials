@@ -74,4 +74,6 @@ curl -X GET http://meshblu.octoblu.com/devices/{gateblu uuid} --header "skynet_a
 - [Using Alljoyn](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/alljoyn.md)
 - [Controlling the Rally Fighter](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/rally_fighter.md)
 - [Remote Arduino](https://github.com/virgilvox/octoblu_tutorials/blob/master/meshblu/pi/remote_arduino.md)
+- [AllJoyn & Gateblu](http://www.alisa.codes/2014/08/29/alljoyn-and-gateblu.html) ignore first few steps if you have a Gateblu Ready Pi
+- [Controlling LifX Bulbs](http://www.alisa.codes/2014/08/30/lifx-lights.html)
 
