@@ -20,20 +20,28 @@ curl -X POST -d "type=gateway" http://meshblu.octoblu.com/devices
 
 ```
 
-##Configure WiFi
-
-After having burned the OctoPi image to your SD card:
-
-1. Open the root directory of the SD card in a file explorer.
-2. Open the file wifi.conf with a text editor.
-3. Enter in your wifi configuration details. (This acts like a standard wpa_supplicant.conf file)
-4. Save and close the file.
 
 ##Configure Gateblu (Gateway)
 
 1. In the root folder of the SD card open a file named meshconf.sh inside a text editor.
 2. Change the UUID/TOKEN to match the one you saved earlier.
 3. Save and close.
+
+
+##Configure WiFi
+
+After having burned the OctoPi image to your SD card:
+
+WiPi Set up
+1. Your pi will broadcast its SSDI on boot ( Look for OctoBlu_AP_..)
+2. Connect to the Pi's access point, you will be redirected to configure your pi's wifi
+
+
+If using WiPi ignore this::
+1. Open the root directory of the SD card in a file explorer.
+2. Open the file wifi.conf with a text editor.
+3. Enter in your wifi configuration details. (This acts like a standard wpa_supplicant.conf file)
+4. Save and close the file.
 
 ##First Run
 
