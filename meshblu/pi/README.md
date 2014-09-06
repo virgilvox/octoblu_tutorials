@@ -3,6 +3,10 @@
 
 #Octo-Pi Setup
 
+Be sure to download and install [NodeBlu](https://chrome.google.com/webstore/detail/nodeblu/aanmmiaepnlibdlobmbhmfemjioahilm?hl=en-US) and check out some [videos of how to use it! ](https://www.youtube.com/user/cmatthieu/videos)
+
+
+
 ##Burn Image to SD Card
 
 For this part you will need an 8gb SD card.
