@@ -63,3 +63,8 @@ c43462d1-1cea-11e4-861d-89322229e557
 ```
 3c701ab0-2a69-11e4-ba29-b7d9779a4387
 ```
+
+##TEST
+```
+curl -X POST -d '{"devices": "c43462d1-1cea-11e4-861d-89322229e557/3c701ab0-2a69-11e4-ba29-b7d9779a4387", "payload": {"m":"headlighton"}}' http://meshblu.octoblu.com/messages --header "skynet_auth_uuid: 4742bc11-339f-11e4-9203-013acdacbbee" --header "skynet_auth_token: 0lb3pnw1z600y66rueumhxmtuawqm2t9"
+```
